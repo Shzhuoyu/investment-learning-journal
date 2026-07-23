@@ -76,6 +76,7 @@ export default withMermaid(defineConfig({
       ],
       '/resources/': [
         { text: '推荐链接', link: '/resources/' },
+        ...autoSidebar('resources/content'),
       ],
     },
 

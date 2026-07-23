@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Built with VitePress](https://img.shields.io/badge/Built%20with-VitePress-00897b)](https://vitepress.dev)
-[![Gitee Pages](https://img.shields.io/badge/Gitee-Pages-00897b)](https://gitee.com/shzhuoyu/investment-learning-journal/pages)
+[![Github Pages](https://img.shields.io/badge/Gitee-Pages-00897b)](https://shzhuoyu.github.io/investment-learning-journal/investment/)
 
 </div>
 
@@ -18,9 +18,7 @@
 | 板块 | 说明 |
 |------|------|
 | 💰 [投资学习笔记](docs/investment/) | 基础知识、技术分析、基本面分析、投资策略 |
-| 📈 [交易复盘](docs/trading/) | 交易日志、交易规则、交易心理 |
-| 📊 [经济学笔记](docs/economics/) | 宏观经济学、微观经济学 |
-| 🧠 [大佬思想学习](docs/masters/) | 巴菲特、芒格、林奇、达利欧等大师思想 |
+| 🧠 [大佬思想学习](docs/masters/) | 采取网络上的投资大V的一些思想观点和随笔，方便自己阅读 |
 | 🔗 [资源收藏](docs/resources/) | 推荐书单和实用链接 |
 
 ## 🚀 快速开始
@@ -69,7 +67,7 @@ VitePress 支持丰富的 Markdown 扩展：
 
 ## 🌐 部署
 
-本项目采用**本地构建 + Gitee Pages** 的方式部署：
+本项目采用**本地构建 + Github Pages** 的方式部署：
 
 ```bash
 npm run docs:build
@@ -78,7 +76,7 @@ git commit -m "update"
 git push
 ```
 
-然后在 Gitee 仓库的「服务 → Gitee Pages」中点「更新」即可。
+然后在 Github 仓库的「服务 → Github Pages」中点「更新」即可。
 
 ## 🧭 目录结构
 
@@ -90,8 +88,6 @@ investment-learning-journal/
 │   │   ├── config.mjs
 │   │   └── theme/
 │   ├── investment/            # 投资笔记
-│   ├── trading/               # 交易复盘
-│   ├── economics/             # 经济学
 │   ├── masters/               # 大佬思想
 │   └── resources/             # 资源收藏
 ├── public/images/             # 图片资源
