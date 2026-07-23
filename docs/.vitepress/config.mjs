@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import mathjaxPlugin from './mathjax-plugin.mjs'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -47,6 +48,11 @@ export default withMermaid(defineConfig({
   title: '投资学习笔记',
   description: '个人知识库，记录自己的投资学习之路的',
   base,
+
+  // 数学公式渲染（$$ ... $$ 块级 / $ ... $ 行内），构建时生成内联 SVG，无需运行时
+  markdown: {
+    config: (md) => md.use(mathjaxPlugin),
+  },
 
   themeConfig: {
     logo: '/images/logo.svg',

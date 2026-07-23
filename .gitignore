@@ -3,6 +3,11 @@ node_modules/
 /.vitepress/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+docs/.vitepress/.temp/
+docs/.vitepress/config.mjs.timestamp-*.mjs
+
+# 本地 agent 记忆，不推到仓库
+.workbuddy/
 
 # Editor
 .idea/
