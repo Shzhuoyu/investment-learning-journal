@@ -40,7 +40,7 @@ function autoSidebar(subDir, { index, prefix } = {}) {
   return items
 }
 
-const base = '/'
+const base = '/investment-learning-journal/'
 
 export default withMermaid(defineConfig({
   title: '投资学习笔记',
@@ -75,8 +75,8 @@ export default withMermaid(defineConfig({
     search: { provider: 'local' },
 
     editLink: {
-      pattern: 'https://gitee.com/shzhuoyu/investment-learning-journal/edit/main/docs/:path',
-      text: '在 Gitee 上编辑此页',
+      pattern: 'https://github.com/Shzhuoyu/investment-learning-journal/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页',
     },
 
     footer: {
@@ -85,7 +85,7 @@ export default withMermaid(defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://gitee.com/shzhuoyu/investment-learning-journal' },
+      { icon: 'github', link: 'https://github.com/Shzhuoyu/investment-learning-journal' },
     ],
 
     lastUpdated: true,
