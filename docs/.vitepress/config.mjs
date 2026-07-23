@@ -40,7 +40,8 @@ function autoSidebar(subDir, { index, prefix } = {}) {
   return items
 }
 
-const base = '/investment-learning-journal/'
+// 仅生产构建（部署到 GitHub Pages 项目站）使用子路径，本地 dev 仍用根路径
+const base = process.env.NODE_ENV === 'production' ? '/investment-learning-journal/' : '/'
 
 export default withMermaid(defineConfig({
   title: '投资学习笔记',
