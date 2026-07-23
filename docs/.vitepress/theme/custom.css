@@ -1,0 +1,68 @@
+/* ========== 投资学习笔记 - 自定义样式 ========== */
+
+:root {
+  --vp-c-brand-1: #00897b;
+  --vp-c-brand-2: #00695c;
+  --vp-c-brand-3: #004d40;
+  --vp-c-brand-soft: rgba(0, 137, 123, 0.14);
+}
+
+/* 首页样式 */
+.vp-doc h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #00897b, #26a69a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vp-doc h2 {
+  border-top: none;
+  padding-top: 24px;
+  margin-top: 32px;
+}
+
+.vp-doc h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background: var(--vp-c-brand-1);
+  margin-right: 12px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+/* 自定义块 */
+.custom-block.tip {
+  border-color: var(--vp-c-brand-1);
+}
+
+.custom-block.warning {
+  border-color: #ffa726;
+}
+
+/* 表格样式 */
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-brand-soft);
+}
+
+/* 回到顶部按钮 */
+.VPBackToTop {
+  background-color: var(--vp-c-brand-1) !important;
+}
+
+/* 首页英雄区域 */
+.VPHero .name {
+  color: var(--vp-c-brand-1);
+}
+
+/* 搜索框 */
+.DocSearch-Button {
+  border-radius: 8px !important;
+}
