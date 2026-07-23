@@ -36,6 +36,7 @@
     "html-void-elements": "^3.0.0",
     "is-what": "^5.5.0",
     "juice": "^12.1.1",
+    "katex": "^0.18.1",
     "magic-string": "^0.30.21",
     "mark.js": "^8.11.1",
     "markdown-it-mathjax3": "^4.3.2",

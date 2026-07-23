@@ -1,28 +1,7 @@
-// 本地 MathJax 插件：把 $$...$$ / $...$ 渲染为内联 SVG，
-// 并包装成 html_block / html_inline token，让 VitePress(@mdit-vue) 原样透传。
-import { mathjax } from 'mathjax-full/js/mathjax.js'
-import { TeX } from 'mathjax-full/js/input/tex.js'
-import { SVG } from 'mathjax-full/js/output/svg.js'
-import { liteAdaptor } from 'mathjax-full/js/adaptors/liteAdaptor.js'
-import { RegisterHTMLHandler } from 'mathjax-full/js/handlers/html.js'
-import { AllPackages } from 'mathjax-full/js/input/tex/AllPackages.js'
-import juice from 'juice/client'
-
-const adaptor = liteAdaptor()
-RegisterHTMLHandler(adaptor)
-
-const documentOptions = {
-  InputJax: new TeX({ packages: AllPackages }),
-  OutputJax: new SVG({ fontCache: 'none' }),
-}
-
-function renderMath(content, display) {
-  const mathDocument = mathjax.document(content, documentOptions)
-  const html = adaptor.outerHTML(mathDocument.convert(content, { display }))
-  const stylesheet = adaptor.outerHTML(documentOptions.OutputJax.styleSheet(mathDocument))
-  return juice(html + stylesheet)
-}
-
+// VitePress 兼容的数学公式插件：
+// 只把 $$...$$ / $...$ 包成「原生 HTML 占位标签」（mdit-vue 会原样保留），
+// 真正的公式渲染交给浏览器端 KaTeX（见 theme/index.js）。
+// 标签内保留原始公式文本作为兜底，JS 失效时也能看到内容。
 function isValidDelim(state, pos) {
   let max = state.posMax
   let can_open = true
@@ -67,8 +46,9 @@ function math_inline(state, silent) {
     return true
   }
   if (!silent) {
+    const tex = state.src.slice(start, match)
     const token = state.push('html_inline', '', 0)
-    token.content = renderMath(state.src.slice(start, match), false)
+    token.content = `<span class="math-render" data-display="false" data-tex="${tex}">${tex}</span>`
   }
   state.pos = match + 1
   return true
@@ -106,9 +86,10 @@ function math_block(state, startLine, endLine, silent) {
     (firstLine && firstLine.trim() ? firstLine + '\n' : '') +
     state.getLines(startLine + 1, next, state.tShift[startLine], true) +
     (lastLine && lastLine.trim() ? lastLine : '')
+  const tex = content.trim()
   const token = state.push('html_block', '', 0)
   token.block = true
-  token.content = renderMath(content, true)
+  token.content = `<div class="math-render" data-display="true" data-tex="${tex}">\n${tex}\n</div>\n`
   return true
 }
 
