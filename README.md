@@ -5,13 +5,13 @@
 <div align="center">
 
 [![Built with VitePress](https://img.shields.io/badge/Built%20with-VitePress-00897b)](https://vitepress.dev)
-[![Github Pages](https://img.shields.io/badge/Gitee-Pages-00897b)](https://shzhuoyu.github.io/investment-learning-journal/investment/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-00897b)](https://shzhuoyu.github.io/investment-learning-journal/investment/)
 
 </div>
 
 ## 📋 关于本项目
 
-这是一个**个人投资学习知识库**，使用 Markdown 格式记录，通过 VitePress 构建为静态网站，部署在 Gitee Pages 上。
+这是一个**个人投资学习知识库**，使用 Markdown 格式记录，通过 VitePress 构建为静态网站，部署在 GitHub Pages 上。
 
 ### 涵盖内容
 
