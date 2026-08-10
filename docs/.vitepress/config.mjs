@@ -41,6 +41,37 @@ function autoSidebar(subDir, { index, prefix } = {}) {
   return items
 }
 
+/**
+ * 按子文件夹分组生成侧边栏（用于按阶段分目录的内容）
+ * @param {string} subDir - docs 下的子目录，如 'investment/content'
+ */
+function autoSidebarGrouped(subDir) {
+  const dir = path.join(docsDir, subDir)
+  const prefix = '/' + subDir.replace(/\\/g, '/')
+  const groups = []
+
+  if (fs.existsSync(dir)) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true })
+      .filter(e => e.isDirectory())
+      .sort((a, b) => a.name.localeCompare(b.name))
+
+    for (const e of entries) {
+      const files = fs.readdirSync(path.join(dir, e.name))
+        .filter(f => f.endsWith('.md'))
+        .sort()
+      groups.push({
+        text: e.name,
+        items: files.map(f => {
+          const name = f.replace(/\.md$/, '')
+          return { text: name, link: `${prefix}/${e.name}/${name}` }
+        }),
+      })
+    }
+  }
+
+  return groups
+}
+
 // 仅生产构建（部署到 GitHub Pages 项目站）使用子路径，本地 dev 仍用根路径
 const base = process.env.NODE_ENV === 'production' ? '/investment-learning-journal/' : '/'
 
@@ -68,7 +99,8 @@ export default withMermaid(defineConfig({
     sidebar: {
       '/investment/': [
         { text: '概览', link: '/investment/' },
-        ...autoSidebar('investment/content'),
+        { text: '📋 课程路线图', link: '/investment/curriculum' },
+        ...autoSidebarGrouped('investment/content'),
       ],
       '/masters/': [
         { text: '概览', link: '/masters/' },
