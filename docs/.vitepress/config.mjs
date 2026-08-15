@@ -91,6 +91,7 @@ export default withMermaid(defineConfig({
     // 顶部导航
     nav: [
       { text: '💰 投资笔记', link: '/investment/' },
+      { text: '📈 个股研究', link: '/stocks/' },
       { text: '🧠 大V思想', link: '/masters/' },
       { text: '🔗 资源', link: '/resources/' },
     ],
@@ -109,6 +110,10 @@ export default withMermaid(defineConfig({
       '/resources/': [
         { text: '推荐链接', link: '/resources/' },
         ...autoSidebar('resources/content'),
+      ],
+      '/stocks/': [
+        { text: '概览', link: '/stocks/' },
+        ...autoSidebar('stocks/content'),
       ],
     },
 
