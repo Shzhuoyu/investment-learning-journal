@@ -2,9 +2,9 @@
 
 ## 写在前面
 
-> 这篇文章整理了[“价投小猪仔”]([价投小猪仔的个人空间-价投小猪仔个人主页-哔哩哔哩视频](https://space.bilibili.com/3707002469485044?spm_id_from=333.788.upinfo.head.click))系列投资课程的八节课内容。
+> 这篇文章整理了[“价投小猪仔”](https://space.bilibili.com/3707002469485044?spm_id_from=333.788.upinfo.head.click)系列投资课程的八节课内容。
 >
-> 来源b站up主：[“价投小猪仔”。]([价投小猪仔的个人空间-价投小猪仔个人主页-哔哩哔哩视频](https://space.bilibili.com/3707002469485044?spm_id_from=333.788.upinfo.head.click))
+> 来源b站up主：[“价投小猪仔”](https://space.bilibili.com/3707002469485044?spm_id_from=333.788.upinfo.head.click)。
 >
 > 从为什么要投资，到怎么看公司、怎么估值、怎么管住自己的手，一路走下来，希望能帮你搭起一个完整的投资框架。
 
