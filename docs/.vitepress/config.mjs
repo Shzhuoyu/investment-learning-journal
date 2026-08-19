@@ -101,7 +101,6 @@ export default withMermaid(defineConfig({
       '/investment/': [
         { text: '概览', link: '/investment/' },
         { text: '📋 课程路线图', link: '/investment/curriculum' },
-        { text: '📋 价投小猪仔', link: '/investment/lesson.md' },
         ...autoSidebarGrouped('investment/content'),
       ],
       '/masters/': [
